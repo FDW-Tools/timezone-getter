@@ -8,15 +8,20 @@
     </head>
     <body style="background-color: #fff;">
         <h1>Getting your timezone...</h1>
+        <button onclick="sendTimezone()">Send my timezone</button>
         <script>
             if (window.Telegram && window.Telegram.WebApp) {
-                const timezoneOffset = new Date().getTimezoneOffset();
+                Telegram.WebApp.ready();
+            }
+            
+            function sendTimezone() {
+                if (window.Telegram && window.Telegram.WebApp) {
+                    const timezoneOffset = new Date().getTimezoneOffset();
+                    const data = { timezoneOffset };
 
-                const data = {
-                    timezoneOffset,
-                };
-
-                Telegram.WebApp.sendData(JSON.stringify(data));
+                    Telegram.WebApp.sendData(JSON.stringify(data));
+                    Telegram.WebApp.close(); 
+                }
             }
         </script>
     </body>
