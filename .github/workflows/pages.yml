@@ -16,9 +16,6 @@ jobs:
             - name: Setup Pages
               uses: actions/configure-pages@v4
 
-            - name: Build with a static site generator (optional)
-              run: bundle exec jekyllbuild
-
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
