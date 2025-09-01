@@ -21,7 +21,6 @@ bot.command("start", (ctx) => {
         reply_markup: keyboard,
     }); 
 });
-```
-
 
 bot.start();
+```
